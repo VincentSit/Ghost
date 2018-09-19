@@ -16,7 +16,10 @@ const prettyURLs = require('../../../middleware/pretty-urls'),
  * Authentication for public endpoints
  */
 module.exports.authenticatePublic = [
-    auth.auth.contentAPI,
+    auth.authenticate.authenticateClient,
+    auth.authenticate.authenticateUser,
+    // This is a labs-enabled middleware
+    auth.authorize.requiresAuthorizedUserPublicAPI,
     cors,
     urlRedirects,
     prettyURLs
