@@ -7,8 +7,8 @@ const prettyURLs = require('../../../middleware/pretty-urls'),
  * Authentication for private endpoints
  */
 module.exports.authenticatePrivate = [
-    auth.authenticate.authenticateAdminAPIKey,
-    auth.authorize.requiresAuthorizedUserOrAPIKey,
+    auth.authenticate.authenticateAdminApiKey,
+    auth.authorize.requiresAuthorizedUserOrApiKey,
     cors,
     urlRedirects,
     prettyURLs
